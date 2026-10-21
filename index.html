@@ -146,36 +146,82 @@ h2{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;line-height:1.05;letter-spac
 .adresse a{color:var(--vdg);font-weight:700}
 .moi{max-width:34em}
 
-/* Devis */
+/* Devis : section d'appel */
 .devis{background:var(--blanc);border-top:1px solid var(--joint)}
-form{margin-top:2.25rem;max-width:44rem;display:grid;gap:2rem}
+.devis-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2rem}
+.devis-actions .btn{min-height:3.75rem;padding:.9rem 1.8rem;font-size:1.2rem}
+.devis-actions a:not(.btn){color:var(--vdg);font-weight:700}
+
+/* Devis : parcours pas à pas */
+.quiz{width:100%;max-width:100%;height:100%;max-height:100%;margin:0;padding:0;border:0;background:var(--blanc);color:var(--encre);overscroll-behavior:contain}
+.quiz[open]{display:flex;flex-direction:column;animation:monter .38s var(--ease)}
+.quiz::backdrop{background:#0E2F3Acc}
+@keyframes monter{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.q-haut{display:grid;grid-template-columns:3rem 1fr 3rem;align-items:center;gap:.75rem;padding:max(.75rem,env(safe-area-inset-top)) 1rem .5rem}
+.q-ico{width:3rem;height:3rem;border:0;border-radius:50%;background:transparent;color:var(--encre);display:grid;place-items:center;cursor:pointer}
+.q-ico:hover{background:var(--faience)}
+.q-ico svg{width:1.6rem;height:1.6rem}
+.q-ico[hidden]{visibility:hidden;display:grid}
+.q-barre{height:.85rem;border-radius:999px;background:var(--faience);overflow:hidden;box-shadow:inset 0 0 0 1px var(--joint)}
+.q-barre i{display:block;height:100%;width:20%;border-radius:999px;background:var(--vdg);transition:width .45s var(--ease)}
+.q-etape{padding:0 1.25rem;font-size:1rem;font-weight:700;color:var(--vdg);text-align:center}
+.q-corps{flex:1;overflow-y:auto;padding:1.5rem 1.25rem 1rem}
+.q-page{max-width:32rem;margin:0 auto;display:grid;gap:1.5rem}
+.q-page[hidden]{display:none}
+.q-page h2{font-size:clamp(1.75rem,6vw,2.25rem);line-height:1.1;outline:none}
+.q-page .aide{color:var(--gris);margin-top:-.75rem}
+.q-avant{animation:avant .32s var(--ease)}
+.q-arriere{animation:arriere .32s var(--ease)}
+@keyframes avant{from{transform:translateX(2.5rem);opacity:0}to{transform:none;opacity:1}}
+@keyframes arriere{from{transform:translateX(-2.5rem);opacity:0}to{transform:none;opacity:1}}
+.q-bas{padding:.75rem 1.25rem max(1rem,env(safe-area-inset-bottom));border-top:1px solid var(--joint)}
+.q-bas>*{max-width:32rem;margin:0 auto}
+.q-bas .btn{width:100%;min-height:3.6rem;font-size:1.15rem;display:flex}
+.q-bas[hidden]{display:none}
 fieldset{border:0;margin:0;padding:0;min-width:0}
-legend,.lab{display:block;font-weight:700;font-size:1.2rem;margin-bottom:.75rem;padding:0}
-.lab small,legend small{font-weight:400;color:var(--gris);font-size:1rem}
-.choix{display:flex;flex-wrap:wrap;gap:.5rem}
-.choix label{position:relative}
-.choix input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.choix span{display:inline-flex;align-items:center;min-height:3rem;padding:.55rem 1.05rem;border:2px solid var(--joint);border-radius:999px;background:var(--faience);transition:background-color .15s,border-color .15s,color .15s}
-.choix input:checked+span{background:var(--encre);border-color:var(--encre);color:var(--faience)}
-.choix input:focus-visible+span{outline:3px solid var(--vdg);outline-offset:3px}
-.choix label:hover span{border-color:var(--encre)}
-.fosse-choix span{font-weight:700}
-input[type=text],input[type=tel],input[type=email],select,textarea{width:100%;min-height:3.25rem;padding:.7rem .9rem;font:inherit;color:var(--encre);background:var(--faience);border:2px solid var(--joint);border-radius:10px}
-textarea{min-height:7.5rem;resize:vertical}
-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--encre) 50%),linear-gradient(135deg,var(--encre) 50%,transparent 50%);background-position:calc(100% - 1.3rem) 55%,calc(100% - .9rem) 55%;background-size:.4rem .4rem;background-repeat:no-repeat;padding-right:2.5rem}
-input:focus,select:focus,textarea:focus{border-color:var(--vdg);outline:none;box-shadow:0 0 0 3px #17705F33}
+.lab{display:block;font-weight:700;font-size:1.15rem;margin-bottom:.6rem}
+.lab small{font-weight:400;color:var(--gris);font-size:1rem}
+.cartes{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.cartes.une{grid-template-columns:1fr}
+.cartes label{position:relative}
+.cartes input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.cartes label{min-width:0}
+.cartes label>span{display:flex;align-items:center;min-height:4rem;height:100%;padding:.75rem 1rem;border:2px solid var(--joint);border-bottom-width:4px;border-radius:14px;background:var(--blanc);font-weight:700;line-height:1.25;transition:background-color .15s,border-color .15s,color .15s,transform .1s}
+.cartes small{display:block;font-weight:400;font-size:.95rem;color:var(--gris);margin-top:.15rem}
+.cartes label:hover>span{border-color:var(--encre)}
+.cartes input:active+span{transform:translateY(2px);border-bottom-width:2px}
+.cartes input:checked+span{background:#E3F2EE;border-color:var(--vdg);color:var(--encre)}
+.cartes input:focus-visible+span{outline:3px solid var(--vdg);outline-offset:3px}
+.cartes .large{grid-column:1/-1}
+.cartes .large>span{font-size:1.15rem}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;min-height:3.4rem;padding:.75rem .95rem;font:inherit;color:var(--encre);background:var(--faience);border:2px solid var(--joint);border-radius:12px}
+textarea{min-height:8rem;resize:vertical}
+input:focus,textarea:focus{border-color:var(--vdg);outline:none;box-shadow:0 0 0 3px #17705F33}
 [aria-invalid=true]{border-color:#B3261E!important}
-.duo{display:grid;gap:2rem}
 .photos{display:flex;gap:.75rem;align-items:flex-start;padding:1rem 1.1rem;background:var(--faience);border-left:4px solid var(--vdg);border-radius:0 10px 10px 0;font-size:1rem}
-.envoi{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
-.erreur{color:#B3261E;font-weight:700;min-height:1.6em}
+.erreur{color:#B3261E;font-weight:700;margin-bottom:.6rem}
 .erreur:empty{display:none}
+.recap{display:grid;gap:0;border:2px solid var(--joint);border-radius:14px;padding:.25rem 1rem}
+.recap div{display:grid;gap:.1rem;padding:.7rem 0;border-bottom:1px solid var(--joint)}
+.recap div:last-child{border-bottom:0}
+.recap dt{font-size:.95rem;color:var(--gris)}
+.recap dd{margin:0;font-weight:700;white-space:pre-line;overflow-wrap:anywhere}
+.pret{display:flex;align-items:center;gap:.75rem}
+.pret svg{width:2.75rem;height:2.75rem;flex:none;color:var(--vdg)}
+.envoi{display:grid;gap:.75rem}
+.envoi .btn{width:100%;min-height:3.6rem;font-size:1.15rem}
+.envoye{padding:1rem 1.1rem;background:#E3F2EE;border-radius:12px;font-weight:700}
+.envoye:empty{display:none}
 .mail-box{padding:1.25rem;border:2px solid var(--joint);border-radius:12px;display:grid;gap:.75rem}
 .mail-box[hidden]{display:none}
 .mail-box p{font-size:1rem}
 .mail-box .liens{display:flex;flex-wrap:wrap;gap:.5rem}
 .mail-box .btn{min-height:2.75rem;padding:.5rem 1rem;font-size:1rem}
 .mb-msg{color:var(--vdg);font-weight:700}
+body.quiz-ouvert{overflow:hidden}
+@media (min-width:48rem){
+  .quiz{width:min(40rem,calc(100% - 3rem));height:min(52rem,calc(100% - 3rem));margin:auto;border-radius:22px;box-shadow:0 30px 80px #0E2F3A55}
+}
 
 /* Pied */
 footer{background:var(--encre);color:#DCE6E4;padding:3rem 0 calc(7rem + env(safe-area-inset-bottom));font-size:1rem}
@@ -217,6 +263,9 @@ body.menu-ouvert .barre{transform:translateY(110%)}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.4z"/></symbol>
+  <symbol id="i-retour" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-fermer" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M7 12.5l3.2 3.2L17 9"/></symbol>
 </svg>
 
 <header class="top">
@@ -332,82 +381,113 @@ body.menu-ouvert .barre{transform:translateY(110%)}
   <section class="devis" id="devis" aria-labelledby="t-devis">
     <div class="wrap">
       <h2 id="t-devis">Demander un devis</h2>
-      <p class="intro">Remplissez ce que vous pouvez. Votre demande part sur mon WhatsApp et je vous rappelle.</p>
-      <form id="f" novalidate>
-        <fieldset>
-          <legend>Pour quoi ?</legend>
-          <div class="choix" id="types">
-            <label class="fosse-choix"><input type="radio" name="type" value="Vidange de fosse"><span>Vidange de fosse</span></label>
-            <label><input type="radio" name="type" value="Fuite d'eau"><span>Fuite d'eau</span></label>
-            <label><input type="radio" name="type" value="Débouchage"><span>Débouchage</span></label>
-            <label><input type="radio" name="type" value="Dépannage"><span>Dépannage</span></label>
-            <label><input type="radio" name="type" value="Chauffe-eau"><span>Chauffe-eau</span></label>
-            <label><input type="radio" name="type" value="Sanitaires"><span>WC, lavabo, douche</span></label>
-            <label><input type="radio" name="type" value="Salle de bain"><span>Salle de bain</span></label>
-            <label><input type="radio" name="type" value="Tout-à-l'égout"><span>Tout-à-l'égout</span></label>
-            <label><input type="radio" name="type" value="Pose de fosse"><span>Pose de fosse</span></label>
-            <label><input type="radio" name="type" value="Autre"><span>Autre</span></label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>C'est pour quand ?</legend>
-          <div class="choix">
-            <label><input type="radio" name="quand" value="Urgent, aujourd'hui"><span>Urgent, aujourd'hui</span></label>
-            <label><input type="radio" name="quand" value="Cette semaine"><span>Cette semaine</span></label>
-            <label><input type="radio" name="quand" value="Pas pressé"><span>Pas pressé</span></label>
-          </div>
-        </fieldset>
-        <div class="duo">
-          <div>
-            <label class="lab" for="commune">Commune</label>
-            <select id="commune" name="commune">
-              <option value="">Choisir</option>
-              <option>Cayenne</option><option>Matoury</option><option>Rémire-Montjoly</option>
-              <option>Macouria</option><option>Montsinéry-Tonnegrande</option><option>Roura</option><option>Autre commune</option>
-            </select>
-          </div>
-          <div>
-            <label class="lab" for="quartier">Quartier ou adresse <small>(facultatif)</small></label>
-            <input type="text" id="quartier" name="quartier" autocomplete="street-address">
-          </div>
-        </div>
-        <div>
-          <label class="lab" for="message">Expliquez en quelques mots <small>(facultatif)</small></label>
-          <textarea id="message" name="message" placeholder="Exemple : le WC est bouché depuis hier, l'eau ne descend plus."></textarea>
-        </div>
-        <div class="duo">
-          <div>
-            <label class="lab" for="nom">Votre nom</label>
-            <input type="text" id="nom" name="nom" autocomplete="name" required>
-          </div>
-          <div>
-            <label class="lab" for="telc">Votre téléphone</label>
-            <input type="tel" id="telc" name="telc" autocomplete="tel" inputmode="tel" required>
-          </div>
-        </div>
-        <div>
-          <label class="lab" for="email">E-mail <small>(facultatif)</small></label>
-          <input type="email" id="email" name="email" autocomplete="email">
-        </div>
-        <p class="photos"><svg class="ico" aria-hidden="true" style="color:var(--vdg);margin-top:.15em"><use href="#i-wa"/></svg><span>Une fois sur WhatsApp, ajoutez des photos du problème : le devis sera plus précis.</span></p>
-        <p class="erreur" id="erreur" role="alert"></p>
-        <div class="envoi">
-          <button class="btn btn-wa" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Envoyer sur WhatsApp</button>
-          <button class="btn btn-ligne" type="button" id="f-mail">Envoyer par e-mail</button>
-        </div>
-        <div class="mail-box" id="mail-box" hidden>
-          <p>Avec quoi voulez-vous envoyer l'e-mail ?</p>
-          <div class="liens">
-            <a class="btn btn-ligne mb-gmail" href="#" target="_blank" rel="noopener">Gmail</a>
-            <a class="btn btn-ligne mb-app" href="#">Ma messagerie</a>
-            <button class="btn btn-ligne mb-copy" type="button">Copier le message</button>
-          </div>
-          <p class="mb-msg" aria-live="polite"></p>
-        </div>
-      </form>
+      <p class="intro">Cinq questions simples, à toucher du doigt. Votre demande arrive sur mon WhatsApp et je vous rappelle.</p>
+      <div class="devis-actions">
+        <a class="btn btn-tel" href="#devis" data-ouvrir>Commencer ma demande</a>
+        <p>ou appelez le <a class="js-tel" href="tel:+594694400411"><span class="js-tel-aff">0694 40 04 11</span></a></p>
+      </div>
     </div>
   </section>
 </main>
+
+<dialog class="quiz" id="quiz" aria-labelledby="q-titre-1">
+  <div class="q-haut">
+    <button class="q-ico" type="button" id="q-retour" aria-label="Question précédente"><svg aria-hidden="true"><use href="#i-retour"/></svg></button>
+    <div class="q-barre" role="progressbar" aria-label="Avancement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20"><i></i></div>
+    <button class="q-ico" type="button" id="q-fermer" aria-label="Fermer"><svg aria-hidden="true"><use href="#i-fermer"/></svg></button>
+  </div>
+  <p class="q-etape" id="q-etape" aria-live="polite">Étape 1 sur 5</p>
+  <form class="q-corps" id="f" novalidate>
+    <fieldset class="q-page" data-p="1">
+      <h2 id="q-titre-1" tabindex="-1">De quoi avez-vous besoin&nbsp;?</h2>
+      <div class="cartes">
+            <label class=large><input type="radio" name="type" value="Vidange de fosse"><span><span>Vidange de fosse</span></span></label>
+            <label><input type="radio" name="type" value="Fuite d'eau"><span><span>Fuite d'eau</span></span></label>
+            <label><input type="radio" name="type" value="Débouchage"><span><span>Débouchage<small>WC, évier, douche</small></span></span></label>
+            <label><input type="radio" name="type" value="Dépannage"><span><span>Dépannage<small>Panne, robinet, canalisation</small></span></span></label>
+            <label><input type="radio" name="type" value="Chauffe-eau"><span><span>Chauffe-eau</span></span></label>
+            <label><input type="radio" name="type" value="Sanitaires"><span><span>Sanitaires<small>Pose de WC, lavabo, douche</small></span></span></label>
+            <label><input type="radio" name="type" value="Salle de bain"><span><span>Salle de bain<small>Rénovation</small></span></span></label>
+            <label><input type="radio" name="type" value="Tout-à-l'égout"><span><span>Tout-à-l'égout<small>Raccordement</small></span></span></label>
+            <label><input type="radio" name="type" value="Pose de fosse"><span><span>Pose de fosse</span></span></label>
+            <label><input type="radio" name="type" value="Autre chose"><span><span>Autre chose</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="q-page" data-p="2" hidden>
+      <h2 id="q-titre-2" tabindex="-1">C'est pour quand&nbsp;?</h2>
+      <div class="cartes une">
+            <label><input type="radio" name="quand" value="Urgent, aujourd'hui"><span><span>Urgent, aujourd'hui<small>Intervention au plus vite</small></span></span></label>
+            <label><input type="radio" name="quand" value="Cette semaine"><span><span>Cette semaine<small>Dans les prochains jours</small></span></span></label>
+            <label><input type="radio" name="quand" value="Pas pressé"><span><span>Pas pressé<small>Pour un devis ou des travaux</small></span></span></label>
+      </div>
+    </fieldset>
+    <div class="q-page" data-p="3" hidden>
+      <h2 id="q-titre-3" tabindex="-1">Où faut-il venir&nbsp;?</h2>
+      <fieldset>
+        <legend class="sr">Commune</legend>
+        <div class="cartes">
+            <label><input type="radio" name="commune" value="Cayenne"><span>Cayenne</span></label>
+            <label><input type="radio" name="commune" value="Matoury"><span>Matoury</span></label>
+            <label><input type="radio" name="commune" value="Rémire-Montjoly"><span>Rémire-Montjoly</span></label>
+            <label><input type="radio" name="commune" value="Macouria"><span>Macouria</span></label>
+            <label><input type="radio" name="commune" value="Montsinéry"><span>Montsinéry</span></label>
+            <label><input type="radio" name="commune" value="Roura"><span>Roura</span></label>
+            <label><input type="radio" name="commune" value="Autre commune"><span>Autre commune</span></label>
+        </div>
+      </fieldset>
+      <div>
+        <label class="lab" for="quartier">Quartier ou adresse <small>(facultatif)</small></label>
+        <input type="text" id="quartier" name="quartier" autocomplete="street-address" enterkeyhint="next">
+      </div>
+    </div>
+    <div class="q-page" data-p="4" hidden>
+      <h2 id="q-titre-4" tabindex="-1">Que se passe-t-il&nbsp;?</h2>
+      <p class="aide">Quelques mots suffisent. Vous pouvez passer cette étape.</p>
+      <div>
+        <label class="sr" for="message">Description du problème</label>
+        <textarea id="message" name="message" placeholder="Exemple : le WC est bouché depuis hier, l'eau ne descend plus."></textarea>
+      </div>
+      <p class="photos"><svg class="ico" aria-hidden="true" style="color:var(--vdg);margin-top:.15em"><use href="#i-wa"/></svg><span>Vous pourrez ajouter des photos dans WhatsApp à la fin : le devis sera plus précis.</span></p>
+    </div>
+    <div class="q-page" data-p="5" hidden>
+      <h2 id="q-titre-5" tabindex="-1">Comment vous rappeler&nbsp;?</h2>
+      <div>
+        <label class="lab" for="nom">Votre nom</label>
+        <input type="text" id="nom" name="nom" autocomplete="name" enterkeyhint="next" required>
+      </div>
+      <div>
+        <label class="lab" for="telc">Votre téléphone</label>
+        <input type="tel" id="telc" name="telc" autocomplete="tel" inputmode="tel" enterkeyhint="next" required>
+      </div>
+      <div>
+        <label class="lab" for="email">E-mail <small>(facultatif)</small></label>
+        <input type="email" id="email" name="email" autocomplete="email" enterkeyhint="done">
+      </div>
+    </div>
+    <div class="q-page" data-p="6" hidden>
+      <div class="pret"><svg aria-hidden="true"><use href="#i-ok"/></svg><h2 id="q-titre-6" tabindex="-1">Votre demande est prête</h2></div>
+      <dl class="recap" id="recap"></dl>
+      <div class="envoi">
+        <button class="btn btn-wa" type="button" id="f-wa"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Envoyer sur WhatsApp</button>
+        <p class="envoye" id="envoye" aria-live="polite"></p>
+        <button class="btn btn-ligne" type="button" id="f-mail">Envoyer par e-mail</button>
+      </div>
+      <div class="mail-box" id="mail-box" hidden>
+        <p>Avec quoi voulez-vous envoyer l'e-mail ?</p>
+        <div class="liens">
+          <a class="btn btn-ligne mb-gmail" href="#" target="_blank" rel="noopener">Gmail</a>
+          <a class="btn btn-ligne mb-app" href="#">Ma messagerie</a>
+          <button class="btn btn-ligne mb-copy" type="button">Copier le message</button>
+        </div>
+        <p class="mb-msg" aria-live="polite"></p>
+      </div>
+    </div>
+  </form>
+  <div class="q-bas" id="q-bas">
+    <p class="erreur" id="erreur" role="alert"></p>
+    <button class="btn btn-tel" type="button" id="q-suite">Continuer</button>
+  </div>
+</dialog>
 
 <footer>
   <div class="wrap">
@@ -439,35 +519,76 @@ burger.addEventListener('click',()=>ouvrir(!menu.classList.contains('ouvert')));
 menu.addEventListener('click',e=>{if(e.target.closest('a'))ouvrir(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('ouvert')){ouvrir(false);burger.focus()}});
 
-/* Formulaire */
-const f=document.getElementById('f'),el=id=>document.getElementById(id),err=el('erreur');
+/* Devis pas à pas */
+const dlg=document.getElementById('quiz'),f=document.getElementById('f'),el=id=>document.getElementById(id),err=el('erreur');
+const NB=5,pages=[...f.querySelectorAll('.q-page')];
+let cur=1,prof=0;
 const val=n=>(f.querySelector(`[name="${n}"]:checked`)||{}).value||'';
-document.querySelectorAll('a[data-type]').forEach(a=>a.addEventListener('click',()=>{
-  const r=[...f.querySelectorAll('[name=type]')].find(x=>x.value===a.dataset.type);if(r)r.checked=true;
-  setTimeout(()=>(val('quand')?el('commune'):f.querySelector('[name=quand]')).focus({preventScroll:true}),600)}));
-function valider(focus=true){
+function afficher(n,sens){
+  pages.forEach(p=>{const on=+p.dataset.p===n;p.hidden=!on;p.classList.remove('q-avant','q-arriere');if(on&&sens)p.classList.add(sens==='avant'?'q-avant':'q-arriere')});
+  cur=n;err.textContent='';
+  const fin=n>NB,pc=fin?100:Math.round(n/NB*100);
+  dlg.querySelector('.q-barre i').style.width=pc+'%';
+  dlg.querySelector('.q-barre').setAttribute('aria-valuenow',pc);
+  el('q-etape').textContent=fin?'Tout est prêt':`Étape ${n} sur ${NB}`;
+  dlg.setAttribute('aria-labelledby','q-titre-'+n);
+  el('q-retour').hidden=n===1;
+  el('q-bas').hidden=fin;
+  el('q-suite').textContent=n===4&&!el('message').value.trim()?'Passer cette étape':n===NB?'Voir ma demande':'Continuer';
+  if(fin)recap();
+  f.scrollTop=0;
+  dlg.querySelector(`#q-titre-${n}`).focus({preventScroll:true});
+}
+function aller(n){history.pushState({q:n},'');prof++;afficher(n,n>cur?'avant':'arriere')}
+function ouvrirDevis(type){
+  if(dlg.open)return;
+  if(type){const r=[...f.querySelectorAll('[name=type]')].find(x=>x.value===type);if(r)r.checked=true}
+  dlg.showModal();document.body.classList.add('quiz-ouvert');
+  history.pushState({q:1},'');prof=1;afficher(1);
+  if(type)aller(2);
+}
+function fermerDevis(){if(prof){const p=prof;prof=0;history.go(-p)}else fermerUI()}
+function fermerUI(){prof=0;if(dlg.open)dlg.close();document.body.classList.remove('quiz-ouvert')}
+addEventListener('popstate',e=>{if(!dlg.open)return;const n=e.state&&e.state.q;if(n){prof=Math.max(1,prof-1);afficher(n,n<cur?'arriere':'avant')}else fermerUI()});
+dlg.addEventListener('cancel',e=>{e.preventDefault();fermerDevis()});
+dlg.addEventListener('click',e=>{if(e.target===dlg)fermerDevis()});
+el('q-fermer').addEventListener('click',fermerDevis);
+el('q-retour').addEventListener('click',()=>history.back());
+document.addEventListener('click',e=>{const a=e.target.closest('a[href="#devis"]');if(!a)return;e.preventDefault();ouvrirDevis(a.dataset.type)});
+function valider(n){
   f.querySelectorAll('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
-  let m='',first=null;const bad=n=>{el(n).setAttribute('aria-invalid','true');return el(n)};
-  if(!val('type')){m='Choisissez le type d\'intervention.';first=f.querySelector('[name=type]')}
-  else if(!el('nom').value.trim()){m='Indiquez votre nom.';first=bad('nom')}
-  else if(el('telc').value.replace(/\D/g,'').length<9){m='Indiquez un numéro de téléphone pour que je puisse vous rappeler.';first=bad('telc')}
-  else if(el('email').value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el('email').value.trim())){m='L\'adresse e-mail n\'est pas valide.';first=bad('email')}
-  err.textContent=m;if(first&&focus)first.focus();return!m;
+  let m='',first=null;const bad=id=>{el(id).setAttribute('aria-invalid','true');return el(id)};
+  if(n===1&&!val('type'))m='Touchez une réponse pour continuer.';
+  else if(n===2&&!val('quand'))m='Touchez une réponse pour continuer.';
+  else if(n===3&&!val('commune'))m='Choisissez votre commune.';
+  else if(n===5){
+    if(!el('nom').value.trim()){m='Indiquez votre nom.';first=bad('nom')}
+    else if(el('telc').value.replace(/\D/g,'').length<9){m='Indiquez un numéro pour que je puisse vous rappeler.';first=bad('telc')}
+    else if(el('email').value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el('email').value.trim())){m='L\'adresse e-mail n\'est pas valide. Vous pouvez aussi la laisser vide.';first=bad('email')}
+  }
+  err.textContent=m;if(first)first.focus();return!m;
 }
+function suite(){if(valider(cur))aller(cur+1)}
+el('q-suite').addEventListener('click',suite);
+f.addEventListener('submit',e=>{e.preventDefault();suite()});
+f.addEventListener('change',e=>{
+  if(e.target.type!=='radio')return;err.textContent='';
+  const n=cur;if(n<=2||(n===3&&!el('quartier').value.trim()))setTimeout(()=>{if(cur===n&&dlg.open)suite()},280);
+});
+el('message').addEventListener('input',()=>{el('q-suite').textContent=el('message').value.trim()?'Continuer':'Passer cette étape'});
+f.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('input[type=text],input[type=tel],input[type=email]')){e.preventDefault();
+  const suivant={nom:'telc',telc:'email'}[e.target.id];if(suivant&&e.target.value.trim())el(suivant).focus();else suite()}});
+const champs=()=>[['Besoin',val('type')],['Quand',val('quand')],['Commune',val('commune')],['Adresse ou quartier',el('quartier').value.trim()],['Description',el('message').value.trim()],['Nom',el('nom').value.trim()],['Téléphone',el('telc').value.trim()],['E-mail',el('email').value.trim()]].filter(x=>x[1]);
+function recap(){const r=el('recap');r.textContent='';champs().forEach(([k,v])=>{const d=document.createElement('div'),t=document.createElement('dt'),dd=document.createElement('dd');t.textContent=k;dd.textContent=v;d.append(t,dd);r.append(d)});el('envoye').textContent='';el('mail-box').hidden=true}
 function texte(){
-  const l=['Bonjour, demande de devis depuis le site HPS.','',`Intervention : ${val('type')}`];
-  if(val('quand'))l.push(`Délai : ${val('quand')}`);
-  if(el('commune').value)l.push(`Commune : ${el('commune').value}`);
-  if(el('quartier').value.trim())l.push(`Adresse ou quartier : ${el('quartier').value.trim()}`);
-  if(el('message').value.trim())l.push('','Description :',el('message').value.trim());
-  l.push('',`Nom : ${el('nom').value.trim()}`,`Téléphone : ${el('telc').value.trim()}`);
-  if(el('email').value.trim())l.push(`E-mail : ${el('email').value.trim()}`);
-  return l.join('\n');
+  const l=['Bonjour, demande de devis depuis le site HPS.',''];
+  champs().forEach(([k,v])=>k==='Description'?l.push('',`${k} :`,v,''):l.push(`${k} : ${v}`));
+  return l.join('\n').replace(/\n{3,}/g,'\n\n');
 }
-const sujet=()=>`Demande de devis : ${val('type')}${el('commune').value?' à '+el('commune').value:''}`;
-f.addEventListener('change',()=>{if(err.textContent)valider(false)});
-f.addEventListener('submit',e=>{e.preventDefault();if(!valider())return;window.open(`https://wa.me/${TEL}?text=${encodeURIComponent(texte())}`,'_blank','noopener')});
-el('f-mail').addEventListener('click',()=>{if(!valider())return;
+const sujet=()=>`Demande de devis : ${val('type')}${val('commune')?' à '+val('commune'):''}`;
+el('f-wa').addEventListener('click',()=>{window.open(`https://wa.me/${TEL}?text=${encodeURIComponent(texte())}`,'_blank','noopener');
+  el('envoye').textContent='WhatsApp s\'ouvre avec votre message. Appuyez sur la flèche d\'envoi dans WhatsApp pour me l\'envoyer.'});
+el('f-mail').addEventListener('click',()=>{
   const su=encodeURIComponent(sujet()),bo=encodeURIComponent(texte()),box=el('mail-box');
   box.querySelector('.mb-gmail').href=`https://mail.google.com/mail/?view=cm&fs=1&to=${MAIL}&su=${su}&body=${bo}`;
   box.querySelector('.mb-app').href=`mailto:${MAIL}?subject=${su}&body=${bo}`;
@@ -475,6 +596,7 @@ el('f-mail').addEventListener('click',()=>{if(!valider())return;
 document.querySelector('#mail-box .mb-copy').addEventListener('click',async()=>{const m=document.querySelector('#mail-box .mb-msg');
   try{await navigator.clipboard.writeText(texte());m.textContent=`Message copié. Collez-le dans un e-mail à ${MAIL}.`}
   catch(e){m.textContent=`Copie impossible. Écrivez à ${MAIL}.`}});
+if(location.hash==='#devis'){history.replaceState(null,'',location.pathname+location.search);ouvrirDevis()}
 })();
 </script>
 </body>
