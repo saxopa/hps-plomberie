@@ -118,6 +118,8 @@ h2{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;line-height:1.05;letter-spac
 /* Fosse */
 .fosse{background:var(--encre);color:var(--faience)}
 .fosse .intro{color:#DCE6E4}
+.accroche{margin-top:.9rem;font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:700;color:var(--jaune)}
+.signes-note{margin-top:.75rem;font-size:1rem;color:#DCE6E4}
 .fosse-grille{display:grid;gap:2.5rem;margin-top:2.5rem}
 .fosse ul li{padding:1.1rem 0;border-top:1px solid #26505C}
 .fosse ul li:last-child{border-bottom:1px solid #26505C}
@@ -146,6 +148,9 @@ h2{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;line-height:1.05;letter-spac
 .adresse address{font-style:normal}
 .adresse a{color:var(--vdg);font-weight:700}
 .moi{max-width:34em}
+.moi h3{font-size:1.3rem;font-weight:700}
+.moi p{margin:.3rem 0 1.25rem}
+.moi p:last-child{margin-bottom:0}
 
 /* Questions */
 .faq{border-top:1px solid var(--joint)}
@@ -155,7 +160,8 @@ h2{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;line-height:1.05;letter-spac
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:50%;background:var(--faience);border:2px solid var(--joint);font-size:1.4rem;font-weight:700;color:var(--vdg);transition:transform .25s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 1.25rem;max-width:38em}
+.faq .rep{padding:0 0 1.25rem;max-width:38em;display:grid;gap:.6rem}
+.faq .rep ul{display:grid;gap:.4rem;padding-left:1.25rem;list-style:disc}
 
 /* Devis : section d'appel */
 .devis{background:var(--blanc);border-top:1px solid var(--joint)}
@@ -271,7 +277,7 @@ body.menu-ouvert .barre{transform:translateY(110%)}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Plumber","@id":"#hps","name":"Hyacinthe Plomberie Sanitaire","alternateName":"HPS","telephone":"+594694400411","email":"nicolashyacinthe1999@gmail.com","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},"address":{"@type":"PostalAddress","streetAddress":"258 avenue Justin Catayée, route de la Madeleine","postalCode":"97300","addressLocality":"Cayenne","addressRegion":"Guyane","addressCountry":"GF"},"areaServed":[{"@type":"City","name":"Cayenne"},{"@type":"City","name":"Matoury"},{"@type":"City","name":"Rémire-Montjoly"},{"@type":"AdministrativeArea","name":"Guyane"}],"founder":{"@type":"Person","name":"Nicolas Hyacinthe","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"CAP","name":"CAP Installation sanitaire"}},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services de plomberie","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vidange de fosse septique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pose de fosse septique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Raccordement au tout-à-l'égout"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Recherche et réparation de fuite d'eau"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Débouchage WC, évier, douche"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage plomberie"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage et installation de chauffe-eau"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pose de sanitaires"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rénovation de salle de bain"}}]},"sameAs":["https://www.instagram.com/h.plomberie_sanitaire/"],"description":"Plombier en Guyane, à Cayenne, Matoury et Rémire-Montjoly : vidange de fosse septique, fuite d'eau, débouchage, chauffe-eau, sanitaires, rénovation de salle de bain, raccordement au tout-à-l'égout. Dépannage 24 h/24, 7 jours sur 7."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte une vidange de fosse septique à Cayenne ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend du volume de la fosse, de son accès et de la distance. Je vous donne le prix par devis, avant de commencer. Pour aller plus vite, envoyez-moi sur WhatsApp une photo de la fosse et de son accès."}},{"@type":"Question","name":"Tous les combien faut-il vider une fosse septique ?","acceptedAnswer":{"@type":"Answer","text":"La réglementation demande une vidange dès que les boues atteignent la moitié du volume de la fosse. Cela dépend de sa taille et du nombre de personnes dans la maison. Une mauvaise odeur, des WC qui se vident lentement ou un regard qui déborde sont les signes qu'il est temps."}},{"@type":"Question","name":"Vous intervenez la nuit, le week-end et les jours fériés ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le dépannage est assuré 24 h/24, 7 jours sur 7, jours fériés compris. Appelez le 0694 40 04 11."}},{"@type":"Question","name":"Que faire en attendant le plombier en cas de fuite ?","acceptedAnswer":{"@type":"Answer","text":"Fermez le robinet d'arrêt général, souvent près du compteur d'eau. Si l'eau approche des prises ou des appareils électriques, coupez le courant au disjoncteur. Épongez ce que vous pouvez, puis appelez."}},{"@type":"Question","name":"Dans quelles communes vous déplacez-vous ?","acceptedAnswer":{"@type":"Answer","text":"À Cayenne, Matoury, Rémire-Montjoly et dans les alentours. Pour une autre commune de Guyane, demandez-moi : je vous dis tout de suite si je peux venir."}},{"@type":"Question","name":"Comment demander un devis ?","acceptedAnswer":{"@type":"Answer","text":"Répondez à cinq questions simples sur ce site : votre demande arrive toute rédigée sur mon WhatsApp et je vous rappelle. Vous pouvez aussi m'appeler ou m'écrire directement sur WhatsApp."}},{"@type":"Question","name":"Qui vient chez moi ?","acceptedAnswer":{"@type":"Answer","text":"Moi, Nicolas Hyacinthe, titulaire du CAP Installation sanitaire. C'est moi qui vous réponds au téléphone et moi qui fais l'intervention."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Plumber","@id":"#hps","name":"Hyacinthe Plomberie Sanitaire","alternateName":"HPS","telephone":"+594694400411","email":"nicolashyacinthe1999@gmail.com","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},"address":{"@type":"PostalAddress","streetAddress":"258 avenue Justin Catayée, route de la Madeleine","postalCode":"97300","addressLocality":"Cayenne","addressRegion":"Guyane","addressCountry":"GF"},"areaServed":[{"@type":"City","name":"Cayenne"},{"@type":"City","name":"Matoury"},{"@type":"City","name":"Rémire-Montjoly"},{"@type":"AdministrativeArea","name":"Guyane"}],"founder":{"@type":"Person","name":"Nicolas Hyacinthe","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"CAP","name":"CAP Installation sanitaire"}},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services de plomberie","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vidange de fosse septique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pose de fosse septique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Raccordement au tout-à-l'égout"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Recherche et réparation de fuite d'eau"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Débouchage WC, évier, douche"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage plomberie"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage et installation de chauffe-eau"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pose de sanitaires"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rénovation de salle de bain"}}]},"sameAs":["https://www.instagram.com/h.plomberie_sanitaire/"],"description":"Plomberie et assainissement en Guyane, à Cayenne, Matoury et Rémire-Montjoly : vidange de fosse septique, fuite d'eau, débouchage, chauffe-eau, sanitaires, rénovation de salle de bain, raccordement au tout-à-l'égout. Dépannage 24 h/24, 7 jours sur 7."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte la vidange d'une fosse septique en Guyane ?","acceptedAnswer":{"@type":"Answer","text":"Le tarif dépend de plusieurs critères, notamment du volume de la fosse, de son accessibilité et de la distance d'intervention. Un devis vous est communiqué avant toute intervention. Pour une estimation rapide, envoyez-nous sur WhatsApp une photo de votre fosse septique et de son accès."}},{"@type":"Question","name":"À quelle fréquence faut-il vidanger une fosse septique ?","acceptedAnswer":{"@type":"Answer","text":"La fréquence dépend surtout du volume de la fosse et du nombre de personnes dans le logement. En règle générale, une vidange est nécessaire lorsque les boues atteignent 50 % du volume utile de la fosse. Certains signes doivent vous alerter : mauvaises odeurs persistantes, évacuation lente des WC ou débordement au niveau des regards. Faites contrôler votre fosse régulièrement et prévoyez une vidange dès que nécessaire."}},{"@type":"Question","name":"Intervenez-vous la nuit, le week-end et les jours fériés ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le dépannage est assuré 24 h/24 et 7 j/7, y compris la nuit, le week-end et les jours fériés. Besoin d'une intervention rapide ? Appelez le 0694 40 04 11."}},{"@type":"Question","name":"Que faire en attendant le plombier en cas de fuite d'eau ?","acceptedAnswer":{"@type":"Answer","text":"Agissez vite pour limiter les dégâts : Coupez l'arrivée d'eau générale, généralement près du compteur d'eau. Si l'eau menace d'atteindre des prises ou des appareils électriques, ne touchez à aucun équipement mouillé. Coupez le courant au disjoncteur seulement si vous pouvez le faire sans danger. Recueillez l'eau et protégez vos meubles, si cela ne présente aucun risque. Puis appelez le dépannage pour une intervention adaptée à votre situation."}},{"@type":"Question","name":"Dans quelles communes intervenez-vous ?","acceptedAnswer":{"@type":"Answer","text":"À Cayenne, Matoury, Rémire-Montjoly et dans les communes environnantes. Vous êtes dans une autre commune de Guyane ? Contactez-nous : nous vous confirmons rapidement si une intervention est possible à votre adresse."}},{"@type":"Question","name":"Comment demander un devis ?","acceptedAnswer":{"@type":"Answer","text":"Répondez à cinq questions simples sur ce site : votre demande arrive toute rédigée sur mon WhatsApp et je vous rappelle. Vous pouvez aussi m'appeler ou m'écrire directement sur WhatsApp."}},{"@type":"Question","name":"Qui intervient à votre domicile ?","acceptedAnswer":{"@type":"Answer","text":"Un professionnel expérimenté, titulaire du CAP Installation sanitaire, intervient chez vous pour assurer votre dépannage avec sérieux, et vous propose une intervention fiable, adaptée à vos besoins."}}]}]}
 </script>
 </head>
 <body>
@@ -320,7 +326,7 @@ body.menu-ouvert .barre{transform:translateY(110%)}
     <div class="wrap">
       <h1>Plombier à Cayenne, Matoury et Rémire-Montjoly</h1>
       <a class="numero js-tel" href="tel:+594694400411" aria-label="Appeler HPS au 0694 40 04 11"><span class="js-tel-aff">0694 40 04 11</span></a>
-      <p class="hero-sous"><span>Fuite, canalisation bouchée, fosse pleine, chauffe-eau en panne : appelez, je viens.</span></p>
+      <p class="hero-sous"><span>Fuite d'eau, canalisation obstruée, fosse septique à vidanger ou chauffe-eau défectueux : HPS intervient pour répondre à vos besoins en plomberie et en assainissement.</span></p>
       <div class="hero-actions">
         <a class="btn btn-wa js-wa" href="https://wa.me/594694400411" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a>
         <a class="btn btn-ligne" href="#devis">Demander un devis</a>
@@ -331,22 +337,25 @@ body.menu-ouvert .barre{transform:translateY(110%)}
 
   <section class="fosse" id="fosse" aria-labelledby="t-fosse">
     <div class="wrap">
-      <h2 id="t-fosse">Vidange de fosse septique</h2>
-      <p class="intro">Je vide et je nettoie votre fosse, je pose des fosses neuves et je raccorde votre maison au tout-à-l'égout.</p>
+      <h2 id="t-fosse">Vidange de fosse septique et travaux d'assainissement</h2>
+      <p class="accroche">Une fosse bien entretenue, une maison plus sereine.</p>
+      <p class="intro">HPS vous accompagne pour l'entretien et les travaux de votre système d'assainissement&nbsp;: de la vidange et du nettoyage de votre fosse septique à la pose d'une fosse neuve, en passant par le raccordement au tout-à-l'égout.</p>
       <div class="fosse-grille">
         <ul>
-          <li><h3>Vidange et nettoyage</h3><p>Pompage de la fosse, nettoyage, contrôle du bon écoulement.</p></li>
-          <li><h3>Pose de fosse</h3><p>Installation d'une fosse neuve pour une construction ou un remplacement.</p></li>
-          <li><h3>Raccordement au tout-à-l'égout</h3><p>Branchement de votre maison sur le réseau public quand il passe dans votre rue.</p></li>
+          <li><h3>Vidange et nettoyage de fosse septique</h3><p>Pompage des matières accumulées, nettoyage adapté de l'installation et vérification du bon écoulement.</p></li>
+          <li><h3>Pose et remplacement de fosse septique</h3><p>Vous construisez ou devez remplacer votre fosse&nbsp;? Une solution adaptée à votre terrain et aux exigences applicables à votre installation.</p></li>
+          <li><h3>Raccordement au tout-à-l'égout</h3><p>Le réseau public passe dans votre rue&nbsp;? Nous relions votre habitation au réseau collectif, sous réserve des conditions techniques et réglementaires.</p></li>
         </ul>
         <div class="signes">
-          <h3>Votre fosse est peut-être pleine si</h3>
+          <h3>Votre fosse présente-t-elle des signes de saturation&nbsp;?</h3>
           <ul>
-            <li>ça sent mauvais autour de la maison ou dans la salle de bain</li>
-            <li>les WC, la douche ou l'évier se vident lentement</li>
-            <li>l'eau remonte ou le regard déborde</li>
+            <li>Mauvaises odeurs autour de la maison ou dans la salle de bain</li>
+            <li>Écoulement lent des WC, de la douche ou de l'évier</li>
+            <li>Remontées d'eau dans les sanitaires</li>
+            <li>Débordement au niveau du regard de la fosse</li>
           </ul>
-          <a class="btn btn-tel" href="#devis" data-type="Vidange de fosse">Devis pour ma fosse</a>
+          <p class="signes-note">Ces signes peuvent avoir plusieurs origines. Un contrôle permet d'identifier le problème et la solution adaptée.</p>
+          <a class="btn btn-tel" href="#devis" data-type="Vidange de fosse">Demander un devis</a>
         </div>
       </div>
     </div>
@@ -354,8 +363,8 @@ body.menu-ouvert .barre{transform:translateY(110%)}
 
   <section class="services" id="services" aria-labelledby="t-services">
     <div class="wrap">
-      <h2 id="t-services">Ce que je fais pour vous</h2>
-      <p class="intro">Touchez un service pour préparer votre demande de devis.</p>
+      <h2 id="t-services">Nos prestations</h2>
+      <p class="intro">Nos services en plomberie et en assainissement. Touchez la prestation qui correspond à votre besoin pour préparer votre demande de devis.</p>
       <div class="services-grille">
         <div>
           <h3>En urgence<small>24 h/24, week-end et jours fériés compris</small></h3>
@@ -381,13 +390,18 @@ body.menu-ouvert .barre{transform:translateY(110%)}
 
   <section class="zone" id="zone" aria-labelledby="t-zone">
     <div class="wrap">
-      <h2 id="t-zone">Je me déplace chez vous</h2>
-      <p class="intro">Plombier en Guyane, installé à Cayenne.</p>
+      <h2 id="t-zone">Votre spécialiste en plomberie et assainissement en Guyane</h2>
+      <p class="intro">HPS intervient à Cayenne, Matoury, Rémire-Montjoly et dans les communes environnantes.</p>
       <ul class="communes">
         <li>Cayenne</li><li>Matoury</li><li>Rémire-Montjoly</li><li>et alentours</li>
       </ul>
       <div class="adresse">
-        <p class="moi">Titulaire du CAP Installation sanitaire, plus de 10 ans de métier. C'est moi qui vous réponds au téléphone et moi qui viens chez vous.</p>
+        <div class="moi">
+          <h3>Plus de 10 ans d'expérience</h3>
+          <p>Titulaire du CAP Installation sanitaire, je mets mon savoir-faire au service des particuliers et des professionnels pour leurs travaux de plomberie, d'assainissement et d'évacuation des eaux usées.</p>
+          <h3>Un interlocuteur unique</h3>
+          <p>C'est moi qui vous réponds au téléphone et moi qui viens chez vous. Un contact direct, un suivi personnalisé.</p>
+        </div>
         <div>
           <address>Hyacinthe Plomberie Sanitaire<br>258 avenue Justin Catayée<br>Route de la Madeleine<br>97300 Cayenne</address>
           <p style="margin-top:.5rem"><a href="https://www.google.com/maps/search/?api=1&amp;query=258+avenue+Justin+Catay%C3%A9e+97300+Cayenne" target="_blank" rel="noopener">Voir sur Google Maps</a></p>
@@ -400,13 +414,13 @@ body.menu-ouvert .barre{transform:translateY(110%)}
     <div class="wrap">
       <h2 id="t-faq">Vos questions</h2>
       <div class="faq-liste">
-        <details><summary>Combien coûte une vidange de fosse septique à Cayenne&nbsp;?</summary><p>Le prix dépend du volume de la fosse, de son accès et de la distance. Je vous donne le prix par devis, avant de commencer. Pour aller plus vite, envoyez-moi sur WhatsApp une photo de la fosse et de son accès.</p></details>
-        <details><summary>Tous les combien faut-il vider une fosse septique&nbsp;?</summary><p>La réglementation demande une vidange dès que les boues atteignent la moitié du volume de la fosse. Cela dépend de sa taille et du nombre de personnes dans la maison. Une mauvaise odeur, des WC qui se vident lentement ou un regard qui déborde sont les signes qu'il est temps.</p></details>
-        <details><summary>Vous intervenez la nuit, le week-end et les jours fériés&nbsp;?</summary><p>Oui. Le dépannage est assuré 24 h/24, 7 jours sur 7, jours fériés compris. Appelez le 0694 40 04 11.</p></details>
-        <details><summary>Que faire en attendant le plombier en cas de fuite&nbsp;?</summary><p>Fermez le robinet d'arrêt général, souvent près du compteur d'eau. Si l'eau approche des prises ou des appareils électriques, coupez le courant au disjoncteur. Épongez ce que vous pouvez, puis appelez.</p></details>
-        <details><summary>Dans quelles communes vous déplacez-vous&nbsp;?</summary><p>À Cayenne, Matoury, Rémire-Montjoly et dans les alentours. Pour une autre commune de Guyane, demandez-moi : je vous dis tout de suite si je peux venir.</p></details>
-        <details><summary>Comment demander un devis&nbsp;?</summary><p>Répondez à cinq questions simples sur ce site : votre demande arrive toute rédigée sur mon WhatsApp et je vous rappelle. Vous pouvez aussi m'appeler ou m'écrire directement sur WhatsApp.</p></details>
-        <details><summary>Qui vient chez moi&nbsp;?</summary><p>Moi, Nicolas Hyacinthe, titulaire du CAP Installation sanitaire. C'est moi qui vous réponds au téléphone et moi qui fais l'intervention.</p></details>
+        <details><summary>Combien coûte la vidange d'une fosse septique en Guyane ?</summary><div class="rep"><p>Le tarif dépend de plusieurs critères, notamment du volume de la fosse, de son accessibilité et de la distance d'intervention. Un devis vous est communiqué avant toute intervention.</p><p>Pour une estimation rapide, envoyez-nous sur WhatsApp une photo de votre fosse septique et de son accès.</p></div></details>
+        <details><summary>À quelle fréquence faut-il vidanger une fosse septique ?</summary><div class="rep"><p>La fréquence dépend surtout du volume de la fosse et du nombre de personnes dans le logement. En règle générale, une vidange est nécessaire lorsque les boues atteignent 50 % du volume utile de la fosse.</p><p>Certains signes doivent vous alerter : mauvaises odeurs persistantes, évacuation lente des WC ou débordement au niveau des regards. Faites contrôler votre fosse régulièrement et prévoyez une vidange dès que nécessaire.</p></div></details>
+        <details><summary>Intervenez-vous la nuit, le week-end et les jours fériés ?</summary><div class="rep"><p>Oui, le dépannage est assuré 24 h/24 et 7 j/7, y compris la nuit, le week-end et les jours fériés.</p><p>Besoin d'une intervention rapide ? Appelez le 0694 40 04 11.</p></div></details>
+        <details><summary>Que faire en attendant le plombier en cas de fuite d'eau ?</summary><div class="rep"><p>Agissez vite pour limiter les dégâts :</p><ul><li>Coupez l'arrivée d'eau générale, généralement près du compteur d'eau.</li><li>Si l'eau menace d'atteindre des prises ou des appareils électriques, ne touchez à aucun équipement mouillé. Coupez le courant au disjoncteur seulement si vous pouvez le faire sans danger.</li><li>Recueillez l'eau et protégez vos meubles, si cela ne présente aucun risque.</li></ul><p>Puis appelez le dépannage pour une intervention adaptée à votre situation.</p></div></details>
+        <details><summary>Dans quelles communes intervenez-vous ?</summary><div class="rep"><p>À Cayenne, Matoury, Rémire-Montjoly et dans les communes environnantes.</p><p>Vous êtes dans une autre commune de Guyane ? Contactez-nous : nous vous confirmons rapidement si une intervention est possible à votre adresse.</p></div></details>
+        <details><summary>Comment demander un devis ?</summary><div class="rep"><p>Répondez à cinq questions simples sur ce site : votre demande arrive toute rédigée sur mon WhatsApp et je vous rappelle. Vous pouvez aussi m'appeler ou m'écrire directement sur WhatsApp.</p></div></details>
+        <details><summary>Qui intervient à votre domicile ?</summary><div class="rep"><p>Un professionnel expérimenté, titulaire du CAP Installation sanitaire, intervient chez vous pour assurer votre dépannage avec sérieux, et vous propose une intervention fiable, adaptée à vos besoins.</p></div></details>
       </div>
     </div>
   </section>
